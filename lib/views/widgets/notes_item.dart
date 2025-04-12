@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/constants/colors.dart';
 
 class NotesItem extends StatelessWidget {
-   NotesItem({super.key, required this.onTap});
+  const NotesItem({super.key, required this.onTap});
   final VoidCallback onTap;
 
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/views/widgets/custom_text_field.dart';
-import 'package:hive/hive.dart';
+
 
 class WritingNoteView extends StatelessWidget {
   const WritingNoteView({super.key});
