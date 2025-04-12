@@ -15,28 +15,44 @@ class WritingNoteView extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(15),
           child: SingleChildScrollView(
-            child: Column(
-              children: [
-                CustomTextField(
-                  inputTextSize: 32,
-                  maxLength: 40,
-                  hint: 'Title',
-                  borderside: BorderSide(color: Colors.black, width: 0.00001),
-                  fontSize: 32,
-                ),
-                Expanded(
-                  child: CustomTextField(
-                    inputTextSize: 20,
-                    maxLength: 500,
-                    hint: 'content',
-                    maxLines: 200,
-                    borderside: BorderSide.none,
-                    fontSize: 18,
-                  ),
-                ),
-              ],
-            ),
+            child: FormValidateInputs(),
           ),
         ));
+  }
+}
+
+class FormValidateInputs extends StatefulWidget {
+  const FormValidateInputs({
+    super.key,
+  });
+
+  @override
+  State<FormValidateInputs> createState() => _FormValidateInputsState();
+}
+
+class _FormValidateInputsState extends State<FormValidateInputs> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CustomTextField(
+          inputTextSize: 32,
+          maxLength: 40,
+          hint: 'Title',
+          borderside: BorderSide(color: Colors.black, width: 0.00001),
+          fontSize: 32,
+        ),
+        Expanded(
+          child: CustomTextField(
+            inputTextSize: 20,
+            maxLength: 500,
+            hint: 'content',
+            maxLines: 200,
+            borderside: BorderSide.none,
+            fontSize: 18,
+          ),
+        ),
+      ],
+    );
   }
 }
