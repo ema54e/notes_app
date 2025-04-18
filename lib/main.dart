@@ -12,7 +12,7 @@ void main() async {
   Bloc.observer = SimpleBlocObserver();
   await Hive.initFlutter();
   Hive.registerAdapter(NotesModelAdapter());
-  await Hive.openBox(kMyBox);
+  await Hive.openBox<NotesModel>(kMyBox);
   runApp(const NotesApp());
 }
 
@@ -22,20 +22,17 @@ class NotesApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => AddNotesCubit())],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          fontFamily: 'Poppins',
-        ),
-        routes: {
-          NotesView.id: (context) => NotesView(),
-          WritingNoteView.id: (context) => WritingNoteView(),
-        },
-        initialRoute: NotesView.id,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'Poppins',
       ),
+      routes: {
+        NotesView.id: (context) => NotesView(),
+        WritingNoteView.id: (context) => WritingNoteView(),
+      },
+      initialRoute: NotesView.id,
     );
   }
 }

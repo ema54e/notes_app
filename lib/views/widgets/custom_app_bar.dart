@@ -6,23 +6,26 @@ class CustomAppBar extends StatelessWidget {
       {super.key,
       required this.icon,
       required this.onTap,
-      required this.title, required this.fontSize});
+      required this.title,
+      required this.fontSize,
+      this.isLoading = false});
   final IconData icon;
   final VoidCallback onTap;
   final String title;
   final double fontSize;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-         Text(
+        Text(
           title,
           style: TextStyle(
             fontSize: fontSize,
           ),
         ),
-        CustomIconButtom(icon: icon, onTap: onTap),
+        CustomIconButtom(icon: icon, onTap: onTap, isLoading: isLoading),
       ],
     );
   }
