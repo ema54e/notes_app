@@ -29,7 +29,7 @@ class _FormValidateInputsState extends State<FormValidateInputs> {
             builder: (context, state) {
               return CustomAppBar(
                 icon: Icons.check,
-                isLoading: state is AddNotesLoading? true: false,
+                isLoading: state is AddNotesLoading ? true : false,
                 onTap: () {
                   if (_keyForm.currentState!.validate()) {
                     _keyForm.currentState!.save();
