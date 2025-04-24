@@ -19,9 +19,10 @@ part 'show_notes_state.dart';
 class ShowNotesCubit extends Cubit<ShowNotesCubitState> {
   List<NotesModel> notes = [];
   ShowNotesCubit() : super(ShowNotesCubitInitial());
-  fitchNotes()  {
+  fitchNotes() {
     var note = Hive.box<NotesModel>(kMyBox);
-  
+
     notes = note.values.toList();
+    emit(ShowNotesCubitSuccess());
   }
 }

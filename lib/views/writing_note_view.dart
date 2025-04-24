@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/cubits/add_cubit/add_notes_cubit.dart';
+import 'package:notes_app/cubits/show_notes_cubit/show_notes_cubit.dart';
 import 'package:notes_app/views/widgets/form_validate_inputes.dart';
 
 class WritingNoteView extends StatelessWidget {
@@ -20,7 +21,9 @@ class WritingNoteView extends StatelessWidget {
                   print(AddNotesFailure('failes ${state.errorMessage}'));
                 }
                 if (state is AddNotesSuccess) {
+                   BlocProvider.of<ShowNotesCubit>(context).fitchNotes();
                   Navigator.pop(context);
+                 
                 }
               },
               child: FormValidateInputs()),

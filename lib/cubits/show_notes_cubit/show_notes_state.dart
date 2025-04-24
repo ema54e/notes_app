@@ -6,3 +6,5 @@ sealed class ShowNotesCubitState {}
 final class ShowNotesCubitInitial extends ShowNotesCubitState {}
 
 
+final class ShowNotesCubitSuccess extends ShowNotesCubitState {}
+
