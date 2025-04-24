@@ -4,7 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_app/constants/colors.dart';
 import 'package:notes_app/cubits/show_notes_cubit/show_notes_cubit.dart';
 import 'package:notes_app/models/notes_model.dart';
-//import 'package:intl/intl_browser.dart';
+import 'package:intl/intl_browser.dart';
 
 class NotesItem extends StatelessWidget {
   const NotesItem({super.key, required this.onTap, required this.notes});
